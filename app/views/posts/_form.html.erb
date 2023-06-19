@@ -20,6 +20,15 @@
     <%= form.label :description, style: "display: block" %>
     <%= form.text_field :description %>
   </div>
+<div>
+<%= form.label :pictures%>
+<%= form.file_field :pictures, multiple: true %>
+</div>
+
+<div>
+  <%= form.label :post_category %>
+  <%= form.select :category_id, options_for_select(Category.all.map { |category| [category.post_category, category.id]})%>
+</div>
 
   <div>
     <%= form.submit %>
